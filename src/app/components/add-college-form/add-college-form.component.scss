@@ -1,0 +1,184 @@
+@import "../../../assets/scss/theme";
+@import "../../../assets/scss/variables.scss";
+:host ::ng-deep {
+  .confirm-popup {
+    p {
+      font-size: $font-2xl;
+      text-align: center;
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    .confirm-popup {
+      width: 80% !important;
+    }
+  }
+  @media only screen and (max-width: 434px) {
+    .submit__form {
+      width: 100%;
+    }
+    .cancel__form {
+      width: 100%;
+    }
+    .submit-btn {
+      width: 100%;
+    }
+    .cancel-btn {
+      width: 100%;
+    }
+  }
+  .p-dropdown-panel
+    .p-dropdown-items
+    .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+    background: none;
+  }
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+    background: none;
+  }
+  .p-dropdown-trigger {
+    .p-icon-wrapper {
+      background-color: #f7f7f7;
+      padding: 4px;
+      border-radius: 100%;
+    }
+  }
+  .p-dialog {
+    border-radius: 24px !important;
+  }
+  .p-dialog .p-dialog-header {
+    border-top-right-radius: 24px !important;
+    border-top-left-radius: 24px !important;
+    padding-bottom: 0 !important;
+  }
+  .p-dialog .p-dialog-content:last-of-type {
+    border-bottom-right-radius: 24px !important;
+    border-bottom-left-radius: 24px !important;
+  }
+  .p-dialog-header {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+  }
+  .disable-input .p-dropdown {
+    background-color: $graybg !important;
+    cursor: default;
+
+    &:enabled:hover {
+      background-color: $graybg;
+      border: 1px solid #dedede !important;
+    }
+    &:enabled:focus {
+      outline: 0 none;
+      outline-offset: 0;
+      box-shadow: 0 0 0 0.2rem #fff;
+      background-color: $graybg;
+      border: 1px solid #dedede !important;
+    }
+  }
+  .alert-text {
+    font-size: 0.75rem;
+    color: $primary-red;
+  }
+
+  .red-border {
+    border: 1px solid $primary-red;
+  }
+
+  .error--drop {
+    border: 1px solid $primary-red;
+    padding: 1.6rem 0rem 1.55rem 0rem;
+    border-radius: 10px;
+
+    // &:hover {
+    //   border: 1px #030303;
+    // }
+  }
+  .credit-limit {
+    // position: relative;
+
+    .disable-input {
+      // position: absolute;
+      background-color: #f7f7f7;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+
+      border-right: 0;
+      width: 5rem;
+    }
+    .credit-input {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+  .card {
+    border-radius: 20px;
+    background-color: #f7f7f7;
+    p {
+      font-size: 24px;
+    }
+  }
+  .Permision {
+    &-heading {
+      font-size: 28px;
+      font-weight: 600;
+    }
+    &-subheading {
+      font-size: 10px;
+    }
+  }
+  .p-inputswitch {
+    .p-inputswitch-slider {
+      width: 100px;
+      font-size: 0.9em;
+      font-weight: 600;
+      height: 35px;
+      background-color: $red-btn !important;
+
+      &:after {
+        content: "Disable";
+        line-height: 34px;
+        padding-left: 30px;
+        color: $primary-red;
+      }
+
+      &:before {
+        left: 5% !important;
+      }
+    }
+
+    &.p-inputswitch-checked {
+      .p-inputswitch-slider {
+        background-color: $green-btn !important;
+
+        &:after {
+          content: "Enable";
+          line-height: 34px;
+          padding-right: 30px;
+          padding-left: 10px;
+          color: $dealer-active;
+        }
+
+        &:before {
+          left: 55% !important;
+        }
+      }
+    }
+  }
+  .form-heading {
+    font-size: 36px;
+    font-weight: 600;
+  }
+  input {
+    background: #fff;
+    border: 1px solid #dedede;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+      box-shadow 0.2s;
+    border-radius: 6px;
+    padding: 0.75rem 0.75rem;
+    font-size: 1em;
+  }
+}
+
+.required-asterisk {
+  color: red;
+  margin-left: 4px; /* Adjust space as needed */
+}

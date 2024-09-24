@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/scss/theme.css";
+@import "../node_modules/primeng/resources/primeng.css";
+@import "../node_modules/primeflex/primeflex.css";
+@import "../node_modules/primeicons/primeicons.css";
+@import "./assets/scss/fonts.scss";
+@import "./assets/scss/variables.scss";
+
+@import "../node_modules/primeng/resources/themes/lara-light-blue/theme.css";
+@import "../node_modules/primeng/resources/primeng.css";
+
+* {
+  font-family: $Hurme;
+  font-size: 15px;
+}
+
+html {
+  font-size: 15px;
+  height: 100%;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 12px;
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    font-size: 13px;
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    font-size: 14px;
+  }
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  // flex: 1;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+.p-datatable.p-datatable-striped .p-datatable-tbody > tr:nth-child(even) {
+  background: #f8f9fa !important;
+}
+.cards {
+  margin: 0 15rem;
+  &-heading {
+    font-size: 28px;
+    margin-bottom: 14px;
+    color: #333;
+    font-weight: 600;
+  }
+}
+footer {
+  // position: absolute;
+  width: 100%;
+  // bottom: 100%;
+}

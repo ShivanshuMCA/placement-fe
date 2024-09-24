@@ -1,0 +1,63 @@
+@import "../../../assets/scss/theme";
+@import "../../../assets/scss/variables.scss";
+
+:host ::ng-deep {
+  .banner {
+    height: 45vh;
+    background: url(../../../assets/images/header-img-2.webp) no-repeat top left;
+    background-size: cover;
+    width: 100%;
+    &-search {
+      &__box {
+        padding: 1.5rem;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border-radius: 6px;
+        .search {
+          &-heading {
+            text-align: center;
+            font-size: 1.125rem !important;
+            h1 {
+              font-size: 1.5rem !important;
+              line-height: 1.625rem !important;
+              color: $white;
+            }
+          }
+          &-item {
+            &__list {
+              li {
+                display: inline-block;
+                padding: 5px 5px 6px;
+                position: relative;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .search {
+    min-width: 400px;
+    font-size: 0.8em;
+    border-radius: 6px;
+    border: none !important;
+    &:focus-visible {
+      outline: none !important;
+    }
+    @media only screen and (max-width: 767px) {
+      min-width: 300px;
+      max-width: 400px;
+    }
+  }
+  .search_btn {
+    // padding: 0.5rem 1rem;
+    height: -webkit-fill-available;
+    background-color: $text-primary;
+    color: $white;
+    border: none !important;
+    position: absolute;
+    right: 0;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+}

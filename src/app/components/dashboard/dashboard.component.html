@@ -1,0 +1,210 @@
+<div class="container">
+  <app-banner></app-banner>
+</div>
+<section class="p-5 cards-section">
+  <div
+    class="flex align-items-center justify-content-between flex-column gap-3 cards"
+  >
+    <div
+      class="cards-container flex align-items-center justify-content-center flex-column gap-3"
+    >
+      <h2 class="cards-heading w-full m-0 pl-7">Select Your Study Goal</h2>
+      <p-carousel
+        [value]="products"
+        [numVisible]="4"
+        [numScroll]="1"
+        [responsiveOptions]="responsiveOptions"
+        [circular]="true"
+      >
+        <ng-template let-product pTemplate="item">
+          <div
+            class="border-1 surface-border border-round m-2 p-3 product-card"
+          >
+            <div class="mb-3 font-medium">
+              <div
+                class="flex align-items-start justify-content-between flex-column mb-2"
+              >
+                <h2 class="title m-0 p-0 mb-2">{{ product.title }}</h2>
+                <span class="m-0 p-0 grey-txt">
+                  {{ product.totalClg }} Colleges
+                </span>
+              </div>
+              <div *ngFor="let i of product?.type" class="product-type">
+                <p class="m-0 p-0 py-2 product-type__item grey-txt">{{ i }}</p>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</section>
+<section class="p-5 cards-section">
+  <div
+    class="flex align-items-center justify-content-between flex-column gap-3 cards"
+  >
+    <div
+      class="cards-container flex align-items-center justify-content-center flex-column gap-3"
+    >
+      <h2 class="cards-heading w-full m-0 pl-7">Explore Colleges Near You</h2>
+      <p-carousel
+        [value]="colleges"
+        [numVisible]="2"
+        [numScroll]="1"
+        [responsiveOptions]="responsiveOptions"
+        [circular]="true"
+        [showIndicators]="false"
+        [autoplayInterval]="4000"
+      >
+        <ng-template let-i pTemplate="item">
+          <div
+            class="border-1 surface-border border-round m-2 p-3 product-card"
+          >
+            <div class="mb-3">
+              <img class="college-img" src="{{ i.link }}" alt="" />
+              <h1 class="cards-heading m-0 p-0">{{ i.name }}</h1>
+              <span>{{ i.address }}</span>
+            </div>
+            <div class="flex align-items-center justify-content-between mb-3">
+              <div>
+                <h2 class="m-0 p-0">Fee</h2>
+                <span>{{ i.fee }}</span>
+              </div>
+              <div>
+                <h2 class="m-0 p-0">Avg. Package</h2>
+                <span>{{ i.pck }}</span>
+              </div>
+            </div>
+            <div
+              class="flex align-items-center justify-content-center flex-column gap-3 mb-3"
+            >
+              <div class="flex align-items-center justify-content-center">
+                <div class="border-line w-5"></div>
+                <h1 class="m-0 p-0" style="font-size: 20px">Courses</h1>
+                <div class="border-line w-5"></div>
+              </div>
+              <div
+                class="flex align-items-center justify-content-center flex-row flex-wrap gap-3 w-full"
+              >
+                <div *ngFor="let c of i?.courses" class="text-center w-2">
+                  <p class="m-0 p-0 py-2 grey-txt text-center courses-link">
+                    {{ c }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</section>
+
+<section class="p-5 cards-section">
+  <div
+    class="flex align-items-center justify-content-between flex-column gap-3 cards"
+  >
+    <div
+      class="cards-container flex align-items-center justify-content-center gap-3"
+    >
+      <div class="card-container">
+        <div class="flip-card">
+          <div class="card-front">
+            <!-- Front side content -->
+            <img src="assets/images/b-1.jpeg" alt="banner-img" class="w-full" />
+          </div>
+          <div class="card-back">
+            <!-- Back side content -->
+            <p class="m-0 px-5 py-2 grey-txt courses-link link-reg">Register</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-container">
+        <div class="flip-card">
+          <div class="card-front">
+            <!-- Front side content -->
+            <img src="assets/images/b-2.jpeg" alt="banner-img" class="w-full" />
+          </div>
+          <div class="card-back">
+            <!-- Back side content -->
+            <p class="m-0 px-5 py-2 grey-txt courses-link link-reg">Register</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="p-5 cards-section">
+  <div
+    class="flex align-items-center justify-content-between flex-column gap-3 cards"
+  >
+    <div
+      class="cards-container flex align-items-center justify-content-center flex-column gap-3 pl-7"
+    >
+      <h2 class="cards-heading w-full m-0">Top 10 Colleges</h2>
+      <div class="flex align-items-center gap-3 w-full">
+        <div *ngFor="let i of courses">
+          <p class="m-0 px-5 py-2 grey-txt courses-link">
+            {{ i }}
+          </p>
+        </div>
+      </div>
+      <div class="card w-full mt-3">
+        <p-table [value]="data" styleClass="p-datatable-striped">
+          <ng-template pTemplate="header" let-columns>
+            <tr>
+              <th>Rank</th>
+              <th>College</th>
+              <th>Ranking</th>
+              <th>Cuttoff</th>
+              <th>Application Deadline</th>
+              <th>Fees</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-product let-columns="columns">
+            <tr>
+              <td>
+                {{ product.rank }}
+              </td>
+              <td>
+                <div
+                  class="flex align-items-center justify-content-between flex-column w-full flex-column"
+                >
+                  <div class="clg-link flex align-items-center gap-3 w-full">
+                    <img src="{{ product?.icon }}" alt="img" />
+                    <div>
+                      <p class="m-0 p-0 text-start w-full">
+                        {{ product.college }}
+                      </p>
+                      <span class="w-full grey-txt">{{ product.address }}</span>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                {{ product.ranking }}
+              </td>
+              <td>
+                {{ product.cutoff }}
+              </td>
+              <td>
+                {{ product.deadline }}
+              </td>
+              <td>
+                <div
+                  class="flex align-items-center justify-content-between flex-column w-full"
+                >
+                  <p class="m-0 p-0 text-start w-full">
+                    {{ product.fee }}
+                  </p>
+                  <span class="w-full grey-txt">1st Year Fees</span>
+                </div>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+</section>
