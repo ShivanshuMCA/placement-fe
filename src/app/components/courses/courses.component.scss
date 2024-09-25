@@ -1,0 +1,60 @@
+@import "../../../assets/scss/theme";
+@import "../../../assets/scss/variables.scss";
+
+:host ::ng-deep {
+  .cards {
+    margin: 0 15rem;
+    &-heading {
+      font-size: 28px;
+      margin-bottom: 14px;
+      color: #333;
+      font-weight: 600;
+    }
+  }
+  .product-type__item {
+    border-bottom: 1px $borderColor solid;
+    cursor: pointer;
+    &:hover {
+      color: $text-primary !important;
+    }
+  }
+  .product-type:last-child .product-type__item {
+    border-bottom: none !important;
+  }
+  .product-card {
+    height: 97%;
+    // width: 230px;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .cards-container {
+    width: -webkit-fill-available !important;
+  }
+  p-carousel {
+    width: -webkit-fill-available !important;
+  }
+  .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+    background-color: $text-primary;
+  }
+
+  .courses-link {
+    border: 1px $borderColor solid;
+    border-radius: 23px;
+  }
+  .border-line {
+    border-bottom: 1px $borderColor solid;
+  }
+  .college-img {
+    min-height: 250px;
+  }
+  .card {
+    border: 1px $borderColor solid;
+  }
+  .clg-link {
+    border-radius: 100%;
+    img {
+      width: 30px;
+    }
+  }
+}

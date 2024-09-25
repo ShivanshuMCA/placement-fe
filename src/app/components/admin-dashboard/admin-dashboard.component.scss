@@ -1,0 +1,132 @@
+@import "../../../assets/scss/theme";
+@import "../../../assets/scss/variables.scss";
+
+:host ::ng-deep {
+  .widget__card .p-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start !important;
+    height: 100%;
+  }
+  .p-card-content {
+    height: 100% !important;
+  }
+  .p-card-body {
+    height: 100%;
+  }
+  .custom {
+    &-card {
+      &--content {
+        // height: 100%;
+      }
+
+      h2 {
+        font-size: $font-lg;
+
+        @media only screen and (max-width: 1700px) {
+          font-size: $font-base;
+        }
+
+        @media only screen and (max-width: 1366px) {
+          font-size: $font-base;
+        }
+      }
+
+      .helpful--links-heading {
+        @media only screen and (max-width: 1700px) {
+          font-size: $font-base;
+        }
+
+        @media only screen and (max-width: 1366px) {
+          font-size: $font-base;
+        }
+      }
+
+      p {
+        color: $gray-beta;
+        font-size: $font-base;
+
+        @media only screen and (max-width: 1400px) {
+          font-size: $font-base;
+        }
+
+        span {
+          color: $black;
+          font-size: $font-2xl;
+
+          @media only screen and (max-width: 1400px) {
+            font-size: $font-xl;
+          }
+
+          &.logs {
+            font-size: 1.5em;
+          }
+        }
+      }
+
+      .banners {
+        &-update {
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+          border-bottom: 1px solid $borderColor;
+
+          &:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: 0;
+          }
+
+          h3 {
+            font-size: 0.9em;
+          }
+
+          p {
+            font-size: 0.85em;
+            color: $black;
+            margin: 5px 0;
+
+            span {
+              color: $gray-beta;
+              font-size: 0.8em;
+            }
+          }
+        }
+      }
+    }
+  }
+  .admin-cards {
+    width: 350px;
+    .p-card {
+      border-radius: 30px !important;
+      &:hover {
+        border: 1px $text-primary solid;
+      }
+    }
+  }
+  .approvals {
+    &-card {
+      background: transparent linear-gradient(180deg, #000000 0%, #454545 100%)
+        0% 0% no-repeat padding-box;
+
+      h2 {
+        color: $white;
+      }
+
+      p {
+        color: $white !important;
+
+        span {
+          color: $white !important;
+        }
+      }
+      &:hover {
+        border: none !important;
+      }
+    }
+  }
+  .links {
+    &-icn {
+      max-width: 40px;
+    }
+  }
+}

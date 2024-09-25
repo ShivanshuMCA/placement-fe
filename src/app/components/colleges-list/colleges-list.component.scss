@@ -1,0 +1,32 @@
+@import "../../../assets/scss/theme";
+@import "../../../assets/scss/variables.scss";
+
+:host ::ng-deep {
+  .p-card-title {
+    text-align: start;
+    text-transform: capitalize;
+    font-size: $font-xl;
+  }
+  .filters {
+    width: 450px;
+  }
+  .college-card {
+    // width: 600px;
+  }
+  .clg-img {
+    img {
+      width: 250px;
+      height: 150px;
+      border-radius: 6px;
+    }
+  }
+  .details {
+    span {
+      font-size: $font-sm;
+      color: $gray-beta;
+      .pi {
+        color: $iconColor;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import "../../../assets/scss/theme";
+@import "../../../assets/scss/variables.scss";
+
+:host ::ng-deep {
+  footer {
+    background-color: #283752;
+    p {
+      color: #b3c1d3;
+    }
+    span {
+      color: #0d5ef4;
+    }
+  }
+}

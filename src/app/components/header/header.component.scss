@@ -1,0 +1,66 @@
+@import "../../../assets/scss/theme";
+@import "../../../assets/scss/variables.scss";
+
+:host ::ng-deep {
+  p {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: $white;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  header {
+    background-color: #007075;
+  }
+  .search {
+    min-width: 400px;
+    font-size: 0.8em;
+    border-radius: 6px;
+    border: none !important;
+    &:focus-visible {
+      outline: none !important;
+    }
+    @media only screen and (max-width: 767px) {
+      min-width: 300px;
+      max-width: 400px;
+    }
+  }
+  .search_btn {
+    // padding: 0.5rem 1rem;
+    height: -webkit-fill-available;
+    background-color: $text-primary;
+    color: $white;
+    border: none !important;
+    position: absolute;
+    right: 0;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+  .logo-img {
+    img {
+      width: 190px;
+    }
+  }
+  input {
+    border: 1px #707578 solid;
+    border-radius: 3px;
+  }
+  .login-btn {
+    background-color: $text-primary !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .border-line {
+    border-bottom: 1px $borderColor solid;
+  }
+  .log-out {
+    border-radius: 30px;
+    border: 1px white solid;
+    padding: 0.5rem 1rem !important;
+    &:hover {
+      border: 1px $text-primary solid !important;
+      color: $text-primary !important;
+    }
+  }
+}

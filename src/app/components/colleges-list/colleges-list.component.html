@@ -1,0 +1,193 @@
+<div class="cards flex justify-content-center mt-4">
+  <div style="border: 1px rgb(207, 205, 205) solid" class="p-3">
+    <p class="text-center m-0 p-0 cards-heading mb-3">
+      Top Colleges from India
+    </p>
+    <p class="m-0 text-center">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
+      consequuntur error repudiandae numquam deserunt quisquam repellat libero
+      asperiores earum nam nobis, culpa ratione quam perferendis esse,
+      cupiditate neque quas!
+    </p>
+  </div>
+</div>
+<div class="cards flex justify-content-between mt-3">
+  <div class="filters p-0 h-full mr-3">
+    <p class="m-0 p-0 mb-3 cards-heading">Filters</p>
+    <div class="card flex justify-content-center mb-3">
+      <p-dropdown
+        [options]="countries"
+        [(ngModel)]="selectedCountry"
+        optionLabel="name"
+        [showClear]="true"
+        placeholder="Select a Country"
+        class="w-full"
+        styleClass="w-full"
+      >
+        <ng-template pTemplate="selectedItem">
+          <div class="flex align-items-center gap-2" *ngIf="selectedCountry">
+            <img
+              src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+              [class]="'flag flag-' + selectedCountry.code.toLowerCase()"
+              style="width: 18px"
+            />
+            <div>{{ selectedCountry?.name }}</div>
+          </div>
+        </ng-template>
+        <ng-template let-country pTemplate="item">
+          <div class="flex align-items-center gap-2">
+            <img
+              src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+              [class]="'flag flag-' + country.code.toLowerCase()"
+              style="width: 18px"
+            />
+            <div>{{ country?.name }}</div>
+          </div>
+        </ng-template>
+      </p-dropdown>
+    </div>
+    <div class="card flex justify-content-center mb-3">
+      <p-dropdown
+        [options]="countries"
+        [(ngModel)]="selectedCountry"
+        optionLabel="name"
+        [showClear]="true"
+        placeholder="Select a Country"
+        class="w-full"
+        styleClass="w-full"
+      >
+        <ng-template pTemplate="selectedItem">
+          <div class="flex align-items-center gap-2" *ngIf="selectedCountry">
+            <img
+              src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+              [class]="'flag flag-' + selectedCountry.code.toLowerCase()"
+              style="width: 18px"
+            />
+            <div>{{ selectedCountry?.name }}</div>
+          </div>
+        </ng-template>
+        <ng-template let-country pTemplate="item">
+          <div class="flex align-items-center gap-2">
+            <img
+              src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+              [class]="'flag flag-' + country.code.toLowerCase()"
+              style="width: 18px"
+            />
+            <div>{{ country?.name }}</div>
+          </div>
+        </ng-template>
+      </p-dropdown>
+    </div>
+  </div>
+  <div
+    class="colleges-card p-0 h-full flex align-items-start justify-content-start flex-column gap-3"
+    style="width: -webkit-fill-available"
+  >
+    <p class="cards-heading p-0 m-0">Showing 100 top colleges</p>
+    <p-card
+      header="Institute of Hotel Management (IHM), Mumbai"
+      class="w-full"
+      styleClass="w-full"
+    >
+      <div class="flex align-items-center gap-3">
+        <div class="clg-img">
+          <img src="../../../assets/images/header-img-1.webp" alt="clg-img" />
+        </div>
+        <div class="details flex gap-3 align-items-center flex-column w-full">
+          <div class="details-location w-full flex align-items-center gap-3">
+            <span>
+              <i
+                class="pi pi-map-marker mr-1"
+                style="font-size: 1rem; color: grey"
+              ></i
+              >Mumbai,Maharashtra</span
+            >
+            <span
+              ><i
+                class="pi pi-flag mr-1"
+                style="font-size: 1rem; color: grey"
+              ></i
+              >Private</span
+            >
+          </div>
+          <div class="details-feature w-full flex align-items-center gap-3">
+            <div class="flex align-items-start justify-content-start">
+              <i
+                class="pi pi-money-bill mr-2 pt-1"
+                style="font-size: 1rem; color: rgb(245, 180, 39)"
+              ></i>
+              <div class="flex align-items-center flex-column">
+                <p
+                  class="m-0 p-0 w-full"
+                  style="font-size: 16px; font-weight: 600"
+                >
+                  20 K - 3.18 Lacs
+                </p>
+                <span class="w-full">Fees</span>
+              </div>
+            </div>
+            <div class="flex align-items-start justify-content-start">
+              <i
+                class="pi pi-bookmark mr-2 pt-1"
+                style="font-size: 1rem; color: rgb(245, 180, 39)"
+              ></i>
+              <div class="flex align-items-center flex-column">
+                <p
+                  class="m-0 p-0 w-full"
+                  style="font-size: 16px; font-weight: 600"
+                >
+                  UGC
+                </p>
+                <span class="w-full">Accredition</span>
+              </div>
+            </div>
+            <div class="flex align-items-start justify-content-start">
+              <i
+                class="pi pi-money-bill mr-2 pt-1"
+                style="font-size: 1rem; color: rgb(245, 180, 39)"
+              ></i>
+              <div class="flex align-items-center flex-column">
+                <p
+                  class="m-0 p-0 w-full"
+                  style="font-size: 16px; font-weight: 600"
+                >
+                  1.5 Lacs
+                </p>
+                <span class="w-full">Avg Package</span>
+              </div>
+            </div>
+            <div class="flex align-items-start justify-content-start">
+              <i
+                class="pi pi-pencil mr-2 pt-1"
+                style="font-size: 1rem; color: rgb(245, 180, 39)"
+              ></i>
+              <div class="flex align-items-center flex-column">
+                <p
+                  class="m-0 p-0 w-full"
+                  style="font-size: 16px; font-weight: 600"
+                >
+                  JEE
+                </p>
+                <span class="w-full">Exams</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex align-items-center justify-content-end w-full mt-3">
+            <span
+              ><i
+                class="pi pi-heart mr-3"
+                style="font-size: 1.8rem; color: grey"
+              ></i
+            ></span>
+            <span
+              ><i
+                class="pi pi-bookmark mr-3"
+                style="font-size: 1.8rem; color: grey"
+              ></i
+            ></span>
+          </div>
+        </div>
+      </div>
+    </p-card>
+  </div>
+</div>

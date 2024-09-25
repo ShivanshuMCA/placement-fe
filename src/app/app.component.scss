@@ -1,0 +1,12 @@
+@import "../assets/scss/variables.scss";
+:host ::ng-deep {
+  .search {
+    font-size: 1rem !important;
+  }
+  .grey-txt {
+    color: #666 !important;
+  }
+  .border-line {
+    border-bottom: 1px $borderColor solid;
+  }
+}

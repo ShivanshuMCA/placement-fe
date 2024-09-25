@@ -1,0 +1,194 @@
+<header class="header">
+  <div
+    class="p-2 flex align-items-center justify-content-center flex-wrap"
+    [ngClass]="{ 'justify-content-between': isAdmin }"
+  >
+    <div
+      class="logo xl:col-3 lg:col-2 md:col-2 sm:col-12 flex align-items-center justify-content-center logo-img"
+      (click)="goToDashboard()"
+    >
+      <img
+        src="../../../assets/images/logo.png"
+        alt="logo"
+        class="cursor-pointer"
+      />
+    </div>
+    <div
+      class="flex flex-column align-items-center justify-content-between xl:col-6 md:col-6 lg:col-6 sm:col-12"
+      *ngIf="!isAdmin"
+    >
+      <div class="w-full">
+        <span class="p-input-icon-left mb-2 w-full">
+          <i class="pi pi-search"></i>
+          <input
+            type="text"
+            pInputText
+            class="search w-full p-3 pl-5"
+            placeholder="Search Colleges, Courses, Exams, QnA, & Articals "
+            maxlength="50"
+          />
+          <p-button
+            class="Btn"
+            label="Search"
+            styleClass="p-button-rounded search_btn"
+          ></p-button>
+        </span>
+      </div>
+      <div
+        class="courses flex align-items-center justify-content-center gap-2 w-full"
+      >
+        <p
+          class="m-0 p-0 w-3 flex align-items-center justify-content-center gap-2"
+        >
+          MBA
+          <i
+            class="pi pi-angle-down"
+            style="font-size: 1rem; font-weight: 500"
+          ></i>
+        </p>
+        <p
+          class="m-0 p-0 w-3 flex align-items-center justify-content-center gap-2"
+        >
+          BBA
+          <i
+            class="pi pi-angle-down"
+            style="font-size: 1rem; font-weight: 500"
+          ></i>
+        </p>
+        <p
+          class="m-0 p-0 w-3 flex align-items-center justify-content-center gap-2"
+        >
+          B.COM
+          <i
+            class="pi pi-angle-down"
+            style="font-size: 1rem; font-weight: 500"
+          ></i>
+        </p>
+        <p
+          class="m-0 p-0 w-3 flex align-items-center justify-content-center gap-2"
+        >
+          B.TECH
+          <i
+            class="pi pi-angle-down"
+            style="font-size: 1rem; font-weight: 500"
+          ></i>
+        </p>
+        <p
+          class="m-0 p-0 w-3 flex align-items-center justify-content-center gap-2"
+        >
+          M.TECH
+          <i
+            class="pi pi-angle-down"
+            style="font-size: 1rem; font-weight: 500"
+          ></i>
+        </p>
+        <p
+          class="m-0 p-0 w-3 flex align-items-center justify-content-center gap-2"
+        >
+          BCA
+          <i
+            class="pi pi-angle-down"
+            style="font-size: 1rem; font-weight: 500"
+          ></i>
+        </p>
+        <p
+          class="m-0 p-0 w-3 flex align-items-center justify-content-center gap-2"
+        >
+          MCA
+          <i
+            class="pi pi-angle-down"
+            style="font-size: 1rem; font-weight: 500; text-align: end"
+          ></i>
+        </p>
+      </div>
+    </div>
+    <div
+      class="flex align-items-center justify-content-center flex-column gap-2 xl:col-3 lg:col-3 md:col-3 sm:col-12"
+      *ngIf="!isAdmin"
+    >
+      <div class="flex align-items-center justify-content-center">
+        <i class="pi pi-whatsapp mr-2" style="color: white"></i>
+        <p>Ask a query on <span style="font-weight: 600">99999999</span></p>
+      </div>
+      <div
+        class="action-btn flex align-items-center justify-content-between gap-3"
+      >
+        <p class="cursor-pointer" (click)="loginPopUp()">Login</p>
+        <p class="cursor-pointer">Sign Up</p>
+      </div>
+    </div>
+    <div
+      class="flex align-items-center justify-content-end mr-8"
+      *ngIf="isAdmin"
+    >
+      <p class="m-0 p-0 log-out">Log Out</p>
+    </div>
+  </div>
+</header>
+<p-dialog
+  header="LOGIN"
+  [modal]="true"
+  [(visible)]="shwForm"
+  [style]="{ width: '25rem' }"
+>
+  <div
+    class="flex align-items-start justify-content-between flex-column gap-2 mb-3 w-full"
+  >
+    <label for="username" class="p-0 m-0">Email Address</label>
+    <input
+      pInputText
+      id="username"
+      class="flex-auto w-full m-0 p-2"
+      autocomplete="off"
+      placeholder="Enter Email Address"
+    />
+  </div>
+  <div
+    class="flex align-items-start justify-content-between flex-column gap-2 w-full"
+  >
+    <label for="email" class="p-0 m-0">Email</label>
+    <input
+      pInputText
+      id="email"
+      class="flex-auto w-full m-0 p-2"
+      autocomplete="off"
+      placeholder="Enter Password"
+    />
+  </div>
+  <div class="mt-2 mb-3">
+    <span style="color: #1048c3; font-size: 14px" class="cursor-pointer"
+      >Forgot Password?</span
+    >
+  </div>
+  <div class="flex justify-content-center gap-3">
+    <p-button
+      label="Login"
+      styleClass="px-4 login-btn"
+      (onClick)="shwForm = false"
+    />
+  </div>
+  <div class="mt-4 flex align-items-center justify-content-center">
+    <div class="border-line w-5"></div>
+    <div><span class="p-2 m-0">OR</span></div>
+    <div class="border-line w-5"></div>
+  </div>
+  <div class="flex align-items-center justify-content-center">
+    <span
+      style="color: #336ed3; font-size: 16px"
+      class="cursor-pointer mt-3"
+      (click)="addCollege()"
+      >Login as College Admin</span
+    >
+  </div>
+</p-dialog>
+
+<p-dialog
+  header="ADD COLLEGE"
+  [modal]="true"
+  [(visible)]="addClg"
+  [style]="{ width: '50rem' }"
+>
+  <div>
+    <add-college-form></add-college-form>
+  </div>
+</p-dialog>

@@ -1,0 +1,1077 @@
+<div class="m-4">
+  <div class="cards-heading">
+    <h1 class="p-0 m-0 form-heading">Add College</h1>
+  </div>
+  <form [formGroup]="userForm">
+    <div class="grid">
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('name')?.invalid && userForm.get('name')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Name</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College Name"
+          formControlName="name"
+          [ngClass]="{
+            'red-border':
+              userForm.get('name')?.invalid && userForm.get('name')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('desc')?.invalid && userForm.get('desc')?.touched
+        }"
+      >
+        <label htmlFor="desc" class="custom required-astrik capitalize"
+          >Description<span class="required-asterisk">*</span></label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter Description"
+          formControlName="desc"
+          [ngClass]="{
+            'red-border':
+              userForm.get('desc')?.invalid && userForm.get('desc')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+        <div *ngIf="userForm.get('desc')?.touched" class="error-message">
+          <span
+            *ngIf="userForm.get('desc')?.hasError('required')"
+            class="error block"
+            >Description is required</span
+          >
+        </div>
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('est')?.invalid && userForm.get('est')?.touched
+        }"
+      >
+        <label htmlFor="est" class="custom required-astrik capitalize"
+          >Established Year<span class="required-asterisk">*</span></label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter Year"
+          formControlName="est"
+          [ngClass]="{
+            'red-border':
+              userForm.get('est')?.invalid && userForm.get('est')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+        <div *ngIf="userForm.get('est')?.touched" class="error-message">
+          <span
+            *ngIf="userForm.get('est')?.hasError('required')"
+            class="error block"
+            >Established Year is required</span
+          >
+        </div>
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('aff')?.invalid && userForm.get('aff')?.touched
+        }"
+      >
+        <label htmlFor="aff" class="custom required-astrik capitalize"
+          >Affiliation<span class="required-asterisk">*</span></label
+        >
+        <p-dropdown
+          formControlName="aff"
+          [options]="cities"
+          optionLabel="name"
+          placeholder="Select affiliation"
+          class="w-full"
+          styleClass="w-full"
+        />
+
+        <!-- filterValue="true" -->
+        <div *ngIf="userForm.get('aff')?.touched" class="error-message">
+          <span
+            *ngIf="userForm.get('aff')?.hasError('required')"
+            class="error block"
+            >Affiliation is required</span
+          >
+        </div>
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('ownership')?.invalid &&
+            userForm.get('ownership')?.touched
+        }"
+      >
+        <label htmlFor="ownership" class="custom required-astrik capitalize"
+          >Ownership<span class="required-asterisk">*</span></label
+        >
+        <p-dropdown
+          formControlName="ownership"
+          [options]="cities"
+          optionLabel="name"
+          placeholder="Select Ownership"
+          class="w-full"
+          styleClass="w-full"
+        />
+
+        <!-- filterValue="true" -->
+        <div *ngIf="userForm.get('ownership')?.touched" class="error-message">
+          <span
+            *ngIf="userForm.get('ownership')?.hasError('required')"
+            class="error block"
+            >Ownership is required</span
+          >
+        </div>
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('feestr')?.invalid && userForm.get('feestr')?.touched
+        }"
+      >
+        <label htmlFor="feestr" class="custom required-astrik capitalize"
+          >Fee Structure<span class="required-asterisk">*</span></label
+        >
+        <p-dropdown
+          formControlName="feestr"
+          [options]="cities"
+          optionLabel="name"
+          placeholder="Select Fee Structure"
+          class="w-full"
+          styleClass="w-full"
+        />
+
+        <!-- filterValue="true" -->
+        <div *ngIf="userForm.get('feestr')?.touched" class="error-message">
+          <span
+            *ngIf="userForm.get('feestr')?.hasError('required')"
+            class="error block"
+            >Fee Structure is required</span
+          >
+        </div>
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('website')?.invalid && userForm.get('website')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >website</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College website"
+          formControlName="website"
+          [ngClass]="{
+            'red-border':
+              userForm.get('website')?.invalid &&
+              userForm.get('website')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('add')?.invalid && userForm.get('add')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Address</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College address"
+          formControlName="add"
+          [ngClass]="{
+            'red-border':
+              userForm.get('add')?.invalid && userForm.get('add')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('city')?.invalid && userForm.get('city')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >City</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="city"
+          [ngClass]="{
+            'red-border':
+              userForm.get('city')?.invalid && userForm.get('city')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('state')?.invalid && userForm.get('state')?.touched
+        }"
+      >
+        <label htmlFor="state" class="custom required-astrik capitalize"
+          >State<span class="required-asterisk">*</span></label
+        >
+        <p-dropdown
+          formControlName="state"
+          [options]="cities"
+          optionLabel="name"
+          placeholder="Select State"
+          class="w-full"
+          styleClass="w-full"
+        />
+
+        <!-- filterValue="true" -->
+        <div *ngIf="userForm.get('state')?.touched" class="error-message">
+          <span
+            *ngIf="userForm.get('state')?.hasError('required')"
+            class="error block"
+            >State is required</span
+          >
+        </div>
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('district')?.invalid &&
+            userForm.get('district')?.touched
+        }"
+      >
+        <label htmlFor="district" class="custom required-astrik capitalize"
+          >District<span class="required-asterisk">*</span></label
+        >
+        <p-dropdown
+          formControlName="district"
+          [options]="cities"
+          optionLabel="name"
+          placeholder="Select district"
+          class="w-full"
+          styleClass="w-full"
+        />
+
+        <!-- filterValue="true" -->
+        <div *ngIf="userForm.get('district')?.touched" class="error-message">
+          <span
+            *ngIf="userForm.get('district')?.hasError('required')"
+            class="error block"
+            >District is required</span
+          >
+        </div>
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('pin')?.invalid && userForm.get('pin')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Pincode</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College pin"
+          formControlName="pin"
+          [ngClass]="{
+            'red-border':
+              userForm.get('pin')?.invalid && userForm.get('pin')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('email')?.invalid && userForm.get('email')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Email</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College email"
+          formControlName="email"
+          [ngClass]="{
+            'red-border':
+              userForm.get('email')?.invalid && userForm.get('email')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('number')?.invalid && userForm.get('number')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Number</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College Number"
+          formControlName="number"
+          [ngClass]="{
+            'red-border':
+              userForm.get('number')?.invalid && userForm.get('number')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('altNumber')?.invalid &&
+            userForm.get('altNumber')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Alternate Number</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="altNumber"
+          [ngClass]="{
+            'red-border':
+              userForm.get('altNumber')?.invalid &&
+              userForm.get('altNumber')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('appFee')?.invalid && userForm.get('appFee')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Application Fee</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College Application Fee"
+          formControlName="appFee"
+          [ngClass]="{
+            'red-border':
+              userForm.get('appFee')?.invalid && userForm.get('appFee')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('img')?.invalid && userForm.get('img')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Image</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College Image"
+          formControlName="img"
+          [ngClass]="{
+            'red-border':
+              userForm.get('img')?.invalid && userForm.get('img')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('altNumber')?.invalid &&
+            userForm.get('altNumber')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Alternate Number</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="altNumber"
+          [ngClass]="{
+            'red-border':
+              userForm.get('altNumber')?.invalid &&
+              userForm.get('altNumber')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('documentId')?.invalid &&
+            userForm.get('documentId')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Document</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="documentId"
+          [ngClass]="{
+            'red-border':
+              userForm.get('documentId')?.invalid &&
+              userForm.get('documentId')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('feeRangeMin')?.invalid &&
+            userForm.get('feeRangeMin')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Fee Range Minimum</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="feeRangeMin"
+          [ngClass]="{
+            'red-border':
+              userForm.get('feeRangeMin')?.invalid &&
+              userForm.get('feeRangeMin')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('feeRangeMax')?.invalid &&
+            userForm.get('feeRangeMax')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Fee Range Maximum</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="feeRangeMax"
+          [ngClass]="{
+            'red-border':
+              userForm.get('feeRangeMax')?.invalid &&
+              userForm.get('feeRangeMax')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('nirfRanking')?.invalid &&
+            userForm.get('nirfRanking')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >NIRF Ranking</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="nirfRanking"
+          [ngClass]="{
+            'red-border':
+              userForm.get('nirfRanking')?.invalid &&
+              userForm.get('nirfRanking')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('stateRanking')?.invalid &&
+            userForm.get('stateRanking')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >State Ranking</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="stateRanking"
+          [ngClass]="{
+            'red-border':
+              userForm.get('stateRanking')?.invalid &&
+              userForm.get('stateRanking')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('brochureUrl')?.invalid &&
+            userForm.get('brochureUrl')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Broucher URL</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="brochureUrl"
+          [ngClass]="{
+            'red-border':
+              userForm.get('brochureUrl')?.invalid &&
+              userForm.get('brochureUrl')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('admissionCriteria')?.invalid &&
+            userForm.get('admissionCriteria')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Admission Criteria</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="admissionCriteria"
+          [ngClass]="{
+            'red-border':
+              userForm.get('admissionCriteria')?.invalid &&
+              userForm.get('admissionCriteria')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('admissionProcess')?.invalid &&
+            userForm.get('admissionProcess')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Admission Process</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="admissionProcess"
+          [ngClass]="{
+            'red-border':
+              userForm.get('admissionProcess')?.invalid &&
+              userForm.get('admissionProcess')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('placementDetails')?.invalid &&
+            userForm.get('placementDetails')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Placement Details</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="placementDetails"
+          [ngClass]="{
+            'red-border':
+              userForm.get('placementDetails')?.invalid &&
+              userForm.get('placementDetails')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('heighestPackage')?.invalid &&
+            userForm.get('heighestPackage')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Heighest Package</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="heighestPackage"
+          [ngClass]="{
+            'red-border':
+              userForm.get('heighestPackage')?.invalid &&
+              userForm.get('heighestPackage')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('hostelFacility')?.invalid &&
+            userForm.get('hostelFacility')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Hostel Facility</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="hostelFacility"
+          [ngClass]="{
+            'red-border':
+              userForm.get('hostelFacility')?.invalid &&
+              userForm.get('hostelFacility')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('libraryFacility')?.invalid &&
+            userForm.get('libraryFacility')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Library Facility</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="libraryFacility"
+          [ngClass]="{
+            'red-border':
+              userForm.get('libraryFacility')?.invalid &&
+              userForm.get('libraryFacility')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('transportFacility')?.invalid &&
+            userForm.get('transportFacility')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Transport Facility</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="transportFacility"
+          [ngClass]="{
+            'red-border':
+              userForm.get('transportFacility')?.invalid &&
+              userForm.get('transportFacility')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('sportsFacility')?.invalid &&
+            userForm.get('sportsFacility')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Sports Facility</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="sportsFacility"
+          [ngClass]="{
+            'red-border':
+              userForm.get('sportsFacility')?.invalid &&
+              userForm.get('sportsFacility')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('otherFacilities')?.invalid &&
+            userForm.get('otherFacilities')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Other Facilities
+        </label>
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="otherFacilities"
+          [ngClass]="{
+            'red-border':
+              userForm.get('otherFacilities')?.invalid &&
+              userForm.get('otherFacilities')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('certifications')?.invalid &&
+            userForm.get('certifications')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Certifications</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="certifications"
+          [ngClass]="{
+            'red-border':
+              userForm.get('certifications')?.invalid &&
+              userForm.get('certifications')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('importatantDates')?.invalid &&
+            userForm.get('importatantDates')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Importatant Dates</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="importatantDates"
+          [ngClass]="{
+            'red-border':
+              userForm.get('importatantDates')?.invalid &&
+              userForm.get('importatantDates')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('reviews')?.invalid && userForm.get('reviews')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Reviews</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="reviews"
+          [ngClass]="{
+            'red-border':
+              userForm.get('reviews')?.invalid &&
+              userForm.get('reviews')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('achivements')?.invalid &&
+            userForm.get('achivements')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Achivements</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="achivements"
+          [ngClass]="{
+            'red-border':
+              userForm.get('achivements')?.invalid &&
+              userForm.get('achivements')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('events')?.invalid && userForm.get('events')?.touched
+        }"
+      >
+        <label htmlFor="serialNo" class="custom required-astrik capitalize"
+          >Events</label
+        >
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter College City"
+          formControlName="events"
+          [ngClass]="{
+            'red-border':
+              userForm.get('events')?.invalid && userForm.get('events')?.touched
+          }"
+        />
+
+        <!-- filterValue="true" -->
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('courses')?.invalid && userForm.get('courses')?.touched
+        }"
+      >
+        <label htmlFor="courses" class="custom required-astrik capitalize"
+          >Courses<span class="required-asterisk">*</span></label
+        >
+        <p-dropdown
+          formControlName="courses"
+          [options]="cities"
+          optionLabel="name"
+          placeholder="Select Courses"
+          class="w-full"
+          styleClass="w-full"
+        />
+
+        <!-- filterValue="true" -->
+        <div *ngIf="userForm.get('courses')?.touched" class="error-message">
+          <span
+            *ngIf="userForm.get('courses')?.hasError('required')"
+            class="error block"
+            >Courses is required</span
+          >
+        </div>
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('departments')?.invalid &&
+            userForm.get('departments')?.touched
+        }"
+      >
+        <label htmlFor="departments" class="custom required-astrik capitalize"
+          >Departments<span class="required-asterisk">*</span></label
+        >
+        <p-dropdown
+          formControlName="departments"
+          [options]="cities"
+          optionLabel="name"
+          placeholder="Select Departments"
+          class="w-full"
+          styleClass="w-full"
+        />
+
+        <!-- filterValue="true" -->
+        <div *ngIf="userForm.get('departments')?.touched" class="error-message">
+          <span
+            *ngIf="userForm.get('departments')?.hasError('required')"
+            class="error block"
+            >Departments is required</span
+          >
+        </div>
+      </div>
+      <div
+        class="flex flex-column gap-2 col-12 xl:col-2 lg:col-4 md:col-6 sm:col-12"
+        [ngClass]="{
+          'empty--input':
+            userForm.get('labs')?.invalid && userForm.get('labs')?.touched
+        }"
+      >
+        <label htmlFor="labs" class="custom required-astrik capitalize"
+          >Labs<span class="required-asterisk">*</span></label
+        >
+        <p-dropdown
+          formControlName="labs"
+          [options]="cities"
+          optionLabel="name"
+          placeholder="Select Labs"
+          class="w-full"
+          styleClass="w-full"
+        />
+
+        <!-- filterValue="true" -->
+        <div *ngIf="userForm.get('labs')?.touched" class="error-message">
+          <span
+            *ngIf="userForm.get('labs')?.hasError('required')"
+            class="error block"
+            >Labs is required</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="p-2 mt-4 mb-3 flex flex-wrap gap-3">
+      <p-button
+        (click)="onSubmit()"
+        pRipple
+        class="diasble submit-btn"
+        [disabled]="userForm.invalid"
+        styleClass="p-button-rounded capitalize py-3 px-6  p-button-secondary submit__form"
+      >
+        <!-- [rounded]="true" -->
+        <p
+          class="flex justify-content-center align-items-center font-bold w-full m-0"
+        >
+          <i class="pi pi-spin pi-spinner mr-3" *ngIf="loading"></i>
+          SUBMIT
+        </p>
+      </p-button>
+      <p-button
+        (click)="goBack()"
+        pRipple
+        class="cancel cancel-btn"
+        label="CANCEL"
+        styleClass=" p-button-rounded py-3 px-6 p-button-secondary capitalize p-button-outlined cancel__form"
+      >
+      </p-button>
+      <!-- [rounded]="true" -->
+    </div>
+  </form>
+</div>
